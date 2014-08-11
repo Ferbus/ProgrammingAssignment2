@@ -17,6 +17,7 @@ makeCacheMatrix <- function(matrix = matrix()){
 	getInverse <- function() inverseMatrix
 	list (setMatrix = setMatrix, getMatrix = getMatrix,
 		  setInverse = setInverse, getInverse = getInverse)
+}
 
 
 ##	The solve function returns the inverse of a specified special
@@ -30,7 +31,7 @@ cacheSolve <- function(m, ...){
 			return(inverseMatrix)
 	}
 	data <- m$getMatrix()
-	inverseMatrix <- solve(m, ...)
+	inverseMatrix <- solve(data, ...)
 	m$setInverse(inverseMatrix)
 	inverseMatrix
 }
